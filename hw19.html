@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [{}, {}, {}];
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].saySmth = function () {
+                console.log(i)
+            }
+        }
+        console.log(arr[2].saySmth());
+
+        // Тут в консолье показывает общий количества объектов. То есть если менять arr[2].saySmth(), 
+        //на arr[0].saySmth() или arr[1].saySmth() она все равно покажет общий количества. 
+        //Потому-что у var глобальная область видимости
+
+
+
+        let arr = [{}, {}, {}];
+        for (let i = 0; i < arr.length; i++) {
+            arr[i].saySmth = function () {
+                console.log(i)
+            }
+        }
+
+        console.log(arr[2].saySmth());
+
+        // Тут в консолье показывает индекс объекта, то есть если написать в место 2 arr[0].saySmth() там выйдет 0 индекс,
+        //если 1 то 1 индекс. А у let блочная область видимости
+
+
+    </script>
+</body>
+
+</html>

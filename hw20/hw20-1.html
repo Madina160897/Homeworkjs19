@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <video id="vid" autoplay muted loop>
+        <source src="./BD - Soile (Gakku Dauysy 2022).mp4">
+    </video>
+
+    
+
+</body>
+<script>
+    let video = document.querySelector("#vid")
+
+    video.addEventListener('mouseenter', function () {
+        video.play();
+    });
+
+    video.addEventListener('mouseleave', function () {
+        video.pause();
+    });
+
+</script>
+
+</html>

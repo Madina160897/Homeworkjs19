@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 600px;
+            height: 300px;
+            border: 2px solid black;
+            background-color: white;
+            padding: 10px;
+        }
+
+        #img1,
+        #img2 {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)"></div>
+    <img src="./97.jpg" id="img1" draggable="true" ondragstart="dragStart(event)">
+    <img src="./helpbox-contact.jpg" id="img2" draggable="true" ondragstart="dragStart(event)">
+
+
+</body>
+<script>
+
+    function dragStart(img) {
+        img.dataTransfer.setData("text/plain", img.target.id);
+    }
+
+    function dragEnter(div) {
+        event.preventDefault();
+        return true;
+    }
+
+    function dragDrop(div) {
+        let data = div.dataTransfer.getData("text/plain");
+        div.target.appendChild(document.getElementById(data));
+    }
+
+    function dragOver(div) {
+        event.preventDefault();
+    }
+</script>
+
+
+</html>
